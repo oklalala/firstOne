@@ -5,7 +5,7 @@
 #nav {
   background-color: #ff6600;
   width: 100%;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   position: fixed;
   top: 0;
   left: 0;
@@ -13,8 +13,10 @@
   z-index: 100;
 }
 
+
+
 #content {
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   position: relative;
   top: 78px;
   padding: 15px;
@@ -24,13 +26,23 @@
 }
 
 .container {
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   width: 800px;
   margin: 0 auto;
 }
 
+ .menu-button {
+    float: right;
+    font-size: 25px;
+    line-height: 40px;
+    color: white;
+    background: transparent;
+    padding: 0 15px;
+    border: 0;
+  }
+
 #about, #my-work, #contact-me {
-  border: 1px solid yellow;
+  /*border: 1px solid yellow;*/
 }
 
 .menu {
@@ -68,7 +80,8 @@ li:hover a {
 }
 
 #my-avatar {
-  border: 1px solid red;  /* 標示用，排版完記得拿掉 */
+  border: none;  /* 標示用，排版完記得拿掉 */
+  /*直接標註，會讓後面的文字跑到下方*/
   float: left;
   margin-right: 20px;
 }
@@ -121,7 +134,7 @@ hr {
 }
 
 .item-info {
-  border: 1px solid red;                    /* 標示用，排版完記得拿掉 */
+  /*border: 1px solid red;                    /* 標示用，排版完記得拿掉 */*/
   background-color: rgba(255,255,255,.8);   /* 背景半透明 */
 
   position: absolute;
@@ -140,11 +153,11 @@ hr {
 }
 
 #contact-me {
-  border: 1px solid green;  /* 標示用，完成後刪除 */
+  /*border: 1px solid green;  /* 標示用，完成後刪除 */*/
 }
 
 form.contact-form {
-  border: 1px solid red;  /* 標示用，完成後刪除 */
+  /*border: 1px solid red;  /* 標示用，完成後刪除 */*/
   width: 50%;
   margin: 0 auto;
 }
@@ -157,7 +170,7 @@ form.contact-form {
 .form-row input, .form-row textarea {
   border-radius: 3px;
   width: 100%;
-  border: 1px solid #D6D9DC;
+  /*border: 1px solid #D6D9DC;*/
   padding: 7px;
 }
 
@@ -194,4 +207,69 @@ hr.bar {
 
 #my-work-gallery {
     text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-button ,
+  .menu-button-checkbox {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+
+  /*
+    手機版的 css 都寫在這邊
+  */   
+  .container {
+    width: auto;
+  }
+
+  .menu {
+    display: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 150px;
+    height: 100%;
+    background: red;
+  }
+
+  .menu li {
+    border: 0;
+    border-radius: 0;
+  }
+  .menu-button-checkbox {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 40px;
+  }
+
+  .menu-button-checkbox:checked ~ .menu {
+    display: block;
+  }
+  #my-avatar {
+    width: 100%; 
+  }
+
+  #my-avatar img {
+    display: block;
+    margin: 15px auto;
+  }
+
+    .item {
+    max-width: 100%;
+  }
+
+    form.contact-form {
+    width: 80%;
+  }
+
+
+
 }
